@@ -1,6 +1,11 @@
 ﻿Output users = new Output();
+Person pers = new Person("John");
+
+
 users.get_name_age();
 users.print_data();
+pers.print_names();
+
 
 class Output
 {
@@ -28,3 +33,35 @@ class Output
         }
     }
 }
+
+
+
+class Person
+{
+    public string name = "Ben";
+    public int age = 18;
+    public string email = "ben@gmail.com";
+    public Person(string name)
+    {
+        this.name = name;
+    }
+    public Person(string name, int age) : this(name)
+    {
+        this.age = age;
+    }
+    public Person(string name, int age, string email) :
+   this("Bob", age)
+    {
+        this.email = email;
+    }
+
+    public void print_names()
+    {
+        Console.WriteLine("\n");
+        Console.WriteLine(name);
+        Console.WriteLine(age);
+        Console.WriteLine(email);
+    }
+
+}
+
